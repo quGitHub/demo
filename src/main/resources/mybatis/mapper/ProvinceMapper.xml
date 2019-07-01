@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itcast.springboot.mybatis.mapper.ProvinceMapper" >
+  <resultMap id="BaseResultMap" type="cn.itcast.springboot.mybatis.entity.Province" >
+    <id column="pid" property="pid" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="provinceType" property="provinceTypes" jdbcType="VARCHAR" />
+  </resultMap>
+
+
+    <!--   	public int update(Province province);
+     -->
+  <!-- <update id="update"  parameterType="cn.itcast.springboot.mybatis.entity.Province">  
+    update province set province=#{province} where provinceType=#{provinceType}
+  </update> -->
+  
+    <update id="update"  parameterType="map">  
+          update province set province=#{provinces} where provinceType=#{provinceTypes}
+    </update>
+  
+  
+    <select id="selectListData" resultMap="BaseResultMap">
+      select pid,
+      CASE WHEN  provinceType='10000'   THEN '河南省'
+	       WHEN  provinceType='20000'   THEN '湖北省'
+	       WHEN  provinceType='30000'   THEN '北京市'
+	       WHEN  provinceType='40000'   THEN '广东省'
+	       WHEN  provinceType='50000'   THEN '上海市'
+	       WHEN  provinceType='60000'   THEN '海南省'
+      end as provinceType,
+      province from province
+    </select>
+</mapper>

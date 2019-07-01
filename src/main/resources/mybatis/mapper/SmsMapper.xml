@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcast.springboot.mybatis.mapper.SmsMapper">
+
+  <insert id="insertSms" parameterType="cn.itcast.springboot.mybatis.entity.SmsEntity">
+			        insert into box_sms(card_no,send_phone,is_success,error_code,create_time)
+			         values(#{cardNo},#{sendPhone},#{isSuccess},#{errorCode},now());
+ 	</insert>
+
+</mapper>

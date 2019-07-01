@@ -22,14 +22,14 @@ public class SwaggerConfig {
 	 * @return
 	 */
 	@Bean
-	public Docket productApi() {
+	/**public Docket productApi() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("cn.itcast.springboot.mybatis"))
 				.paths(PathSelectors.any())
 				.build()
 				.apiInfo(metaData());
-	}
+	}*/
 
 
 

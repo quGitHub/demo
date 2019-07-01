@@ -20,7 +20,7 @@ public class SwaggerConfig {
 	/**
 	 *
 	 * @return
-	 */
+	 
 	@Bean
 	public Docket productApi() {
 		return new Docket(DocumentationType.SWAGGER_2)
@@ -29,7 +29,7 @@ public class SwaggerConfig {
 				.paths(PathSelectors.any())
 				.build()
 				.apiInfo(metaData());
-	}
+	}*/
 
 
 

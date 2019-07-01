@@ -21,7 +21,7 @@ public class SwaggerConfig {
 	 *
 	 * @return
 	 */
-	/*@Bean
+	@Bean
 	public Docket productApi() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
@@ -30,7 +30,7 @@ public class SwaggerConfig {
 				.build()
 				.apiInfo(metaData());
 	}
-*/
+
 
 
 	private ApiInfo metaData() {

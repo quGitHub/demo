@@ -22,7 +22,7 @@ public class SwaggerConfig {
 	 * @return
 	 */
 	@Bean
-	/*public Docket productApi() {
+    public Docket productApi() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("cn.itcast.springboot.mybatis"))
@@ -30,10 +30,9 @@ public class SwaggerConfig {
 				.build()
 				.apiInfo(metaData());
 	}
-*/
 
 
-	private ApiInfo metaData() {
+    private ApiInfo metaData() {
         ApiInfo apiInfo = new ApiInfo(
                 "SpringBoot-Mybatis REST API",
                 "Springboot与mybatis整合",

@@ -1,4 +1,4 @@
 package cn.itcast.springboot.mybatis.bean;
 
-public class config {
+public class Config {
 }

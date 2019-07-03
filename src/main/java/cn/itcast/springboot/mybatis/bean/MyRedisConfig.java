@@ -20,7 +20,7 @@ public class MyRedisConfig {
      * @param redisConnectionFactory
      * @return
      */
-    /*@Bean
+    @Bean
     public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         // 1.创建 redisTemplate 模版
         RedisTemplate<Object, Object> template = new RedisTemplate<>();
@@ -40,5 +40,5 @@ public class MyRedisConfig {
         template.setKeySerializer(new StringRedisSerializer());
         template.afterPropertiesSet();
         return template;
-    }*/
+    }
 }

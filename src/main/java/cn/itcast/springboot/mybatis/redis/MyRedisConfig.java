@@ -1,26 +1,34 @@
-package cn.itcast.springboot.mybatis.bean;
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.databind.ObjectMapper;
+package cn.itcast.springboot.mybatis.redis;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import redis.clients.jedis.HostAndPort;
+import redis.clients.jedis.JedisCluster;
+import redis.clients.jedis.JedisPoolConfig;
+
+import javax.annotation.Resource;
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * redis配置类
  * @author quziyuan
  */
 @Configuration
 public class MyRedisConfig {
-
     /**
      * 设置 redisTemplate 的序列化设置
      * @param redisConnectionFactory
      * @return
      */
-    @Bean
+   /* @Bean
     public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         // 1.创建 redisTemplate 模版
         RedisTemplate<Object, Object> template = new RedisTemplate<>();
@@ -40,5 +48,5 @@ public class MyRedisConfig {
         template.setKeySerializer(new StringRedisSerializer());
         template.afterPropertiesSet();
         return template;
-    }
+    }*/
 }

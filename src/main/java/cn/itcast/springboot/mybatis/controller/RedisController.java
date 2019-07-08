@@ -1,4 +1,6 @@
 package cn.itcast.springboot.mybatis.controller;
+
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -21,17 +23,20 @@ public class RedisController {
 	@Autowired
 	private StringRedisTemplate strRedis;
 
-	@Resource
+    @Autowired
 	private RedisTemplate redisTemplate;
 	
 	@ApiOperation("测试单个string类型查询")
     @GetMapping("/testRedis")
 	@ResponseBody
-	public  void  testRedis() {
-		strRedis.opsForValue().set("imooc_cache", "hello慕课网");
-		String imooc_cache = strRedis.opsForValue().get("imooc_cache");
-		System.out.println(imooc_cache);
-	}
+    public String testRedis(@Param("key") String key, @Param("value") String value) {
+        strRedis.opsForValue().set(key, value);
+        String imooc_cache = strRedis.opsForValue().get(key);
+        return imooc_cache;
+    }
+
+
+
 
 	@ApiOperation("测试list类型查询")
 	@GetMapping("/testRedisList")
